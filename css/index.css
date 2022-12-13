@@ -1,0 +1,87 @@
+/*fontes de texto*/
+
+@font-face {
+    font-family: Tabitha;
+    src: url("../fuentes/tabitha.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Elegance;
+    src: url("../fuentes/Elegance.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: Florania;
+    src: url("../fuentes/Florania.otf") format("opentype");
+}
+
+/*contedor logo*/
+.logo {
+    margin-left: 3%;
+}
+
+/*divs dentro de rowtop*/
+.rowtop div{
+    padding: 10px;
+}
+/*nav*/
+.nav{
+    align-self:center;
+}
+
+/*body*/
+body {
+    background-color: rgb(236, 218, 185);
+}
+
+/*clase fondo claro*/
+.fondo-claro{
+    background-color: rgb(255, 245, 234);
+}
+
+/*contedor sobre_nosotros*/
+.sobre_nosotros{
+    font-family: Elegance;
+    font-size: 18pt;
+}
+/*etiquetas span dentro de sobre_nosotros*/
+.sobre_nosotros span{
+    font-family: Florania;
+}
+
+/*footer da páxina*/
+.footer {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    background-color: rgb(236, 218, 185);
+}
+/*contedor nota_legal*/
+.nota_legal{
+    margin-top: 4%;
+    margin-right: 5%;
+    text-align: center;
+}
+/*parágrafos dentro de nota legal*/
+.nota_legal p {
+    font-family: Tabitha;
+    padding-top: 10%;
+}
+/*contedor datos*/
+.datos{
+    margin-left: 5%;
+}
+
+/*media query*/
+@media only screen and (max-width: 900px){
+    .datos{
+        margin-left: 1%;
+    }
+    .nota_legal{
+        margin-top: 1%;
+        margin-left: 1%;
+    }
+}

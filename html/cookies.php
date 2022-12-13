@@ -1,0 +1,209 @@
+<?php
+session_start();
+include '../autoload.php';
+?>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <!--icono da páxina-->
+        <link rel="icon" type="image/png" href="../images/hotel/hotel_icon.png">
+        <!--arquivos css-->
+        <link rel="stylesheet" href="../css/gallery.css">
+        <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="../js/lightbox/css/lightbox.css">
+        <!--título da páxina-->
+        <title>HOTEL MARAVILLA</title>
+    </head>
+    <!--body-->
+    <body>
+        <!--contedor do menu superior e do navbar-->
+        <div class="container fondo-claro">
+            <!--menu superior-->
+            <div class="row">
+                <div class="col">
+                    <div class="rowtop d-flex justify-content-end">
+                        <!--telefono-->
+                        <div><a href="#"><img class="icon_navbar" src="../images/icons/telephone-fill.svg"
+                                              alt="icono telefono"></a>
+                            <span>+34986000123</span><a href="#">
+                        </div>
+                        <!--rrss-->
+                        <div>
+                            <a href="https://web.whatsapp.com/send?phone=0034666000666"><img class="icon_navbar"
+                                                                                             src="../images/icons/whatsapp.svg" alt="icono whatsapp"></a>
+                            <a href="https://twitter.com/hotelmaravilla"><img class="icon_navbar"
+                                                                              src="../images/icons/facebook.svg" alt="icono facebook"></a>
+                            <a href="https://www.facebook.com/HotelMaravilla/"><img class="icon_navbar"
+                                                                                    src="../images/icons/twitter.svg" alt="icono twitter"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--navbar-->
+            <div class="row">
+                <!--logo da páxina-->
+                <div class="logo col-12 col-sm-3 col-md-2">
+                    <a href="../index.php"><img src="../images/hotel/hotel.png" alt="logo da páxina"></a>
+                </div>
+                <!--nav-->
+                <div class="col-12 col-sm-4 col-md-9 nav justify-content-end">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto nav-justified">
+                                <ul class="navbar-nav mr-auto nav-justified">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-wrap" href="../index.php" role="button"
+                                           aria-haspopup="true" aria-expanded="false"><img class="icon_navbar"
+                                                                                        src="../images/icons/house-fill.svg" alt="icono casa">
+                                            HOME
+                                        </a>
+                                    </li>
+                                    <?php
+                                    if (isset($_SESSION['rol']) && $_SESSION['rol'] == 1) {
+                                        ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-wrap" href="adminMenu/AdminFunctions.php" role="button" aria-haspopup="true"
+                                               aria-expanded="false"><img class="icon_navbar"
+                                                                       src="../images/icons/gear-fill.svg" alt="icono engranaje">
+                                                ADMIN
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-wrap" href="rooms.php" role="button" aria-haspopup="true"
+                                           aria-expanded="false"><img class="icon_navbar"
+                                                                   src="../images/icons/door-open.svg" alt="icono porta">
+                                            ROOMS
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-wrap" href="gallery.php" role="button" aria-haspopup="true"
+                                           aria-expanded="false"><img class="icon_navbar" src="../images/icons/images.svg"
+                                                                   alt="icono galería de imáxenes">
+                                            GALLERY
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-wrap" href="contacto.php" role="button" aria-haspopup="true"
+                                           aria-expanded="false"><img class="icon_navbar" src="../images/icons/chat-left-dots.svg" 
+                                                                   alt="icono contacto">
+                                            CONTACT
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-wrap" href="location.php" role="button" aria-haspopup="true"
+                                           aria-expanded="false"><img class="icon_navbar" src="../images/icons/globe.svg"
+                                                                   alt="icono globo terráqueo, icono ubicación">
+                                            LOCATION
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-wrap" href=" <?php
+                                        if (isset($_SESSION['username'])) {
+                                            echo 'profile/modifyProfile.php';
+                                        } else {
+                                            echo'loginYregistro/loginAndRegister.php';
+                                        }
+                                        ?>" role="button" aria-haspopup="true"
+                                           aria-expanded="false"><img class="icon_navbar"
+                                                                   src="../images/icons/person-square.svg" alt="icono usuario">
+                                                                   <?php
+                                                                   if (isset($_SESSION['username'])) {
+                                                                       echo $_SESSION['username'];
+                                                                   } else {
+                                                                       echo 'LOGIN & SIGN UP';
+                                                                   }
+                                                                   ?>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <?php
+            $cabecera = new \cabeceras\Cabeceras();
+            $cabecera->cabecera();
+            ?>
+        </div>
+        <!--zona central-->
+        <div class="container mb-3 fondo-claro">
+
+            <div class="row">
+                <div class="col">
+                    <div class="col" align="center">
+                        <div class="row">
+                            <div class="border border-dark rounded mt-1 mb-2" align="center">
+
+                                <p class="display-4 bg-secondary text-white text-center rounded">Cookies policy</p>
+                                <p class="ml-1 mr-1 text-center">Like other websites, <span class="font-weight-bold">HotelMaravilla</span> uses a technology called cookies to obtain information about the use of the website.</br>
+                                    <span class="font-weight-bold">VisitaGalicia</span> informs that you can use cookies on your computer that are necessary for browsing the website.</p>
+                                <p class="display-4 bg-secondary text-white text-center mt-2 rounded">Type of cookies used by the website</p>
+                                <p class="ml-1 mr-1 text-center">The website uses session cookies. These cookies collect and store data only while the user accesses the website and allow him to be recognized on that site, so that any changes you make or any data you enter will be remembered from one page to another.</br>
+                                    The domain name of the server that transmits and activates the automatic collection procedures is <span class="font-italic">hotelmaravilla.teis25.dewordpress.org</span> and its validity period is 30 days, after which the cookie files are automatically deleted.</p>
+                                <p class="display-4 bg-secondary text-white text-center mt-2 rounded">Disable and block cookies</p>
+                                <p class="ml-1 mr-1 text-center">In any case, <span class="font-weight-bold">HotelMaravilla</span> informs that, since cookies are not necessary for the use of the website, the user can block or disable them in the configuration of their browser, the
+                                     which allows you to refuse the installation of all cookies or some of them. Most browsers allow you to warn of the presence of cookies or reject them automatically. If they are rejected, you can still use the website
+                                     that the use of any of its services may be limited.
+                                </p>
+
+                                <p class="display-4 bg-secondary text-white text-center mt-2 rounded">Changes to the cookie policy</p>
+
+                                <p class="ml-1 mr-1 text-center">It is possible that <span class="font-weight-bold">HotelMaravilla</span> update this website cookie policy, so it is recommended that you review this policy each time you access the website, in order to find out about
+                                     how and what cookies are used for.</p>
+                                <p class="display-4 bg-secondary text-white text-center mt-2 rounded">Contact</p>
+
+                                <p class="ml-1 mr-1 text-center">If you have any questions, comments or suggestions about the cookie policy, please write to: <span class="font-italic">hotelmaravilla@teis25.dewordpress.org</span></p>
+                                <!--Link páxina principal-->
+                                <p class="display-5 bg-light text-center rounded"><a href="../index.php">Return to the main page</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--footer-->
+                    <div class="footer">
+                        <!--datos hotel-->
+                        <div class="datos">
+                            <!--logo-->
+                            <div class="logo_footer"><img src="../images/hotel/hotel.png" alt="logo da páxina"></div>
+                            <!--direccion-->
+                            <div>
+                                <a href="#"><img class="icon_navbar" src="../images/icons/geo-alt-fill.svg"
+                                                 alt="icono marca ubicación"></a>
+                                <span>Avda. de Galicia, 101, 36216 Vigo, Pontevedra</span>
+                            </div>
+                            <!--telefono-->
+                            <div>
+                                <a href="#"><img class="icon_navbar" src="../images/icons/telephone-fill.svg"
+                                                 alt="icono telefono"></a>
+                                <span>+34986000123</span>
+                            </div>
+                            <!--email-->
+                            <div>
+                                <a href="#"><img class="icon_navbar" src="../images/icons/envelope-fill.svg"
+                                                 alt="icono sobre de mensaxe"></a>
+                                <span>reservas@hotelmaravilla.com</span>
+                            </div>
+                        </div>
+                        <!--nota legal-->
+                        <div class="nota_legal">
+                            <p>Hotel Maravilla © 2021<br>Legal Note</p>
+                        </div>
+                    </div>
+                </div></div></div>
+        <!--arquivos js-->
+        <script src="../js/bootstrap/jquery.js"></script>
+        <script src="../js/bootstrap/popper.min.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
+        <script src="../js/lightbox/js/lightbox.js"></script>
+
+    </body>
+
+</html>

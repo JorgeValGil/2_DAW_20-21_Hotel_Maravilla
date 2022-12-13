@@ -1,0 +1,26 @@
+<configuracion>
+    <usuario>
+        <servidor>localhost</servidor>
+        <bd>teis2_hotel</bd>
+        <nombre>teis2_conexion</nombre>
+        <password>abc123.</password>
+        <rol>conexion</rol>
+    </usuario>
+    
+    <usuario>
+        <servidor>localhost</servidor>
+        <bd>teis2_hotel</bd>
+        <nombre>teis2_estandar</nombre>
+        <password>abc123.</password>
+        <rol>estandar</rol>
+    </usuario>
+    
+    <usuario>
+        <servidor>localhost</servidor>
+        <bd>teis2_hotel</bd>
+        <nombre>teis2_root</nombre>
+        <password>abc123.</password>
+        <rol>admin</rol>
+    </usuario>
+    
+</configuracion>

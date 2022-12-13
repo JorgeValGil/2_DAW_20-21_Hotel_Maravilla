@@ -1,0 +1,92 @@
+/*fontes de texto*/
+
+@font-face {
+  font-family: Tabitha;
+  src: url("../fuentes/tabitha.ttf") format("opentype");
+}
+
+/*contedor logo*/
+.logo {
+  margin-left: 3%;
+}
+
+/*divs dentro de rowtop*/
+.rowtop div {
+  padding: 10px;
+}
+/*nav*/
+.nav {
+  align-self: center;
+}
+
+/*body*/
+body {
+  background-color: rgb(236, 218, 185);
+}
+
+/*clase fondo claro*/
+.fondo-claro {
+  background-color: rgb(255, 245, 234);
+}
+
+/*footer da páxina*/
+.footer {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  background-color: rgb(236, 218, 185);
+}
+/*contedor nota_legal*/
+.nota_legal {
+  margin-top: 4%;
+  margin-right: 5%;
+  text-align: center;
+}
+/*parágrafos dentro de nota legal*/
+.nota_legal p {
+  font-family: Tabitha;
+  padding-top: 10%;
+}
+/*contedor datos*/
+.datos {
+  margin-left: 5%;
+}
+
+/*media query*/
+@media only screen and (max-width: 900px) {
+  .datos {
+    margin-left: 1%;
+  }
+  .nota_legal {
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+}
+
+/*lightbox*/
+.gallery{
+    width: 100%;
+    text-align: center;
+}
+
+.gallery a img {
+  width: 20%;
+  height: auto;
+  border: 2px solid #fff;
+  -webkit-transition: -webkit-transform .15s ease;
+  -moz-transition: -moz-transform .15s ease;
+  -o-transition: -o-transform .15s ease;
+  -ms-transition: -ms-transform .15s ease;
+  transition: transform .15s ease;
+}
+
+.gallery a:hover img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}

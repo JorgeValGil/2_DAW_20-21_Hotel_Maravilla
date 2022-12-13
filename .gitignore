@@ -1,0 +1,57 @@
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+composer.phar
+/vendor/
+
+
+# No need to version the binary files of other tools
+bin/*
+!bin/phpdoc*
+!bin/githubaction*
+!bin/console*
+!bin/phpcs*
+!bin/phpcbf*
+!bin/utils/*
+
+# Build folder and vendor folder are generated code; no need to version this
+build/
+.phpdoc/cache/
+data/examples/MariosPizzeria/build/
+vendor/
+node_modules/
+tools/
+temp/
+var/
+*.phar
+cypress/screenshots
+cypress/videos
+.phpunit.result.cache
+
+# IDEs and editors
+.idea
+/nbproject/private/
+.buildpath
+.project
+.settings/
+.classpath
+.c9/
+*.launch
+*.sublime-workspace
+*.swp
+*.bkp
+*.bak
+*~
+.~lock.*
+
+# By default the phpunit.xml.dist is provided; you can override this using a local config file
+phpunit.xml
+
+# Contains local overrides for docker no need to put those in to version control
+docker-compose.override.yml

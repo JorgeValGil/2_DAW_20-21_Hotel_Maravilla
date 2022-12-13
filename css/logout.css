@@ -1,0 +1,22 @@
+/*fontes de texto*/
+
+@font-face {
+    font-family: Informal;
+    src: url("../fuentes/informal.otf") format("opentype");
+}
+
+p{
+    font-family: Informal;
+    text-align: center;
+    color: red;
+}
+
+.info{
+    margin-top: 30px;
+    font-size: 24pt;
+}
+
+/*body*/
+body {
+    background-color: rgb(255, 245, 234);
+}

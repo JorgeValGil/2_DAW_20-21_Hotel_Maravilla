@@ -1,0 +1,156 @@
+/*fontes de texto*/
+
+@font-face {
+  font-family: Tabitha;
+  src: url("../fuentes/tabitha.ttf") format("opentype");
+}
+
+/*contedor logo*/
+.logo {
+  margin-left: 3%;
+}
+
+/*divs dentro de rowtop*/
+.rowtop div {
+  padding: 10px;
+}
+/*nav*/
+.nav {
+  align-self: center;
+}
+
+/*body*/
+body {
+  background-color: rgb(236, 218, 185);
+}
+
+/*clase fondo claro*/
+.fondo-claro {
+  background-color: rgb(255, 245, 234);
+}
+
+/*footer da páxina*/
+.footer {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  background-color: rgb(236, 218, 185);
+}
+/*contedor nota_legal*/
+.nota_legal {
+  margin-top: 4%;
+  margin-right: 5%;
+  text-align: center;
+}
+/*parágrafos dentro de nota legal*/
+.nota_legal p {
+  font-family: Tabitha;
+  padding-top: 10%;
+}
+/*contedor datos*/
+.datos {
+  margin-left: 5%;
+}
+
+/*media query*/
+@media only screen and (max-width: 900px) {
+  .datos {
+    margin-left: 1%;
+  }
+  .nota_legal {
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+  
+}
+  iframe {
+  height: 500px;
+  width: 800px;
+}
+
+
+/*media query*/
+@media only screen and (max-width: 1000px) {
+
+  iframe {
+  height: 440px;
+  width: 650px;
+}
+}
+
+
+/*media query*/
+@media only screen and (max-width: 900px) {
+  .datos {
+    margin-left: 1%;
+  }
+  .nota_legal {
+    margin-top: 1%;
+    margin-left: 1%;
+  }
+}
+
+
+
+
+/*media query*/
+@media only screen and (max-width: 800px) {
+
+  iframe {
+  height: 300px;
+  width: 500px;
+}
+}
+
+/*media query*/
+@media only screen and (max-width: 600px) {
+
+  iframe {
+  height: 240px;
+  width: 400px;
+}
+}
+
+/*media query*/
+@media only screen and (max-width: 500px) {
+
+  iframe {
+  height: 200px;
+  width: 350px;
+}
+}
+
+/*media query*/
+@media only screen and (max-width: 450px) {
+
+  iframe {
+  height: 200px;
+  width: 300px;
+}
+}
+
+/*media query*/
+@media only screen and (max-width: 400px) {
+
+  iframe {
+  height: 200px;
+  width: 250px;
+}
+}
+
+/*media query*/
+@media only screen and (max-width: 300px) {
+
+  iframe {
+  height: 200px;
+  width: 200px;
+}
+}
+
+.texto{
+    font-size: 14pt;
+    font-weight: bold;
+}
